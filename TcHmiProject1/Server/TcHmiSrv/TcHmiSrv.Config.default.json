@@ -26,7 +26,36 @@
     "DEFAULTTIMEFORMATLOCALE": "client",
     "DEFAULTTIMEZONE": "client",
     "DEFAULTUSERGROUP": "__SystemUsers",
-    "DEFINITIONS": {},
+    "DEFINITIONS": {
+        "PLC1.DropdownBox": {
+            "allOf": [
+                {
+                    "attributes": {
+                        "generate_implicit_init_function": "",
+                        "qualified_only": "",
+                        "strict": ""
+                    },
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "options": [
+                        {
+                            "label": "first_page",
+                            "value": 0
+                        },
+                        {
+                            "label": "Second_page",
+                            "value": 1
+                        }
+                    ]
+                },
+                {
+                    "$ref": "tchmi:general#/definitions/INT16"
+                }
+            ]
+        }
+    },
     "DEFLATECOMPRESSIONLEVEL": 5,
     "DIAGNOSTICS_DOMAINS": [],
     "DISABLED_CONFIGURATION_HINTS": [],
@@ -2321,6 +2350,73 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.HoldButton": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::HoldButton",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "comment": "SAFE"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.HoldSwitchLight": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::HoldSwitchLight",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.Options": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::Options",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/PLC1.DropdownBox"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.StopButton": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::StopButton",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.SwitchButton": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::SwitchButton",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.SwitchButtonLight": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::SwitchButtonLight",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.test": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -3178,6 +3274,12 @@
                 "LocalizeText": 3,
                 "Login": 3,
                 "Logout": 3,
+                "PLC1.MAIN.HoldButton": 3,
+                "PLC1.MAIN.HoldSwitchLight": 3,
+                "PLC1.MAIN.Options": 3,
+                "PLC1.MAIN.StopButton": 3,
+                "PLC1.MAIN.SwitchButton": 3,
+                "PLC1.MAIN.SwitchButtonLight": 3,
                 "SetLocale": 3,
                 "SubscribeEvents": 3,
                 "TcHmiSqliteLogger.Diagnostics": 1,

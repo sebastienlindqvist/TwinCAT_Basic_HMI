@@ -5,13 +5,33 @@
 VAR
 	test : STRING := 'hello'; //this is a test variable to place in the textbox on the HMI
 	//SAFE
+	HoldButton : BOOL := FALSE;
+	HoldSwitchLight : BOOL;
+	SwitchButton : BOOL := FALSE;
+	SwitchButtonLight : BOOL;
+	
+	StopButton : BOOL;
+
+	Options : DropdownBox;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[HoldSwitchLight:=HoldButton;
+SwitchButtonLight:=SwitchButton;
+
+IF StopButton THEN
+	HoldButton:=FALSE;
+	SwitchButton:=FALSE;
+END_IF]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="30" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
