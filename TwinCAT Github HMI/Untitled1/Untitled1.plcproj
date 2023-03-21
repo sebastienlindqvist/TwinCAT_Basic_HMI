@@ -16,6 +16,9 @@
     <Implicit_Jitter_Distribution>{588a4053-140d-4b4e-afba-662f80656562}</Implicit_Jitter_Distribution>
     <LibraryReferences>{8885cc3e-316b-4a09-a23d-39920e55f5f9}</LibraryReferences>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Test' ">
+    <OutputPath>Bin\Test\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="DUTs\DropdownBox.TcDUT">
       <SubType>Code</SubType>

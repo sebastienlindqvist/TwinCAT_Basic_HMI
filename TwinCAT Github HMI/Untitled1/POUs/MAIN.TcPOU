@@ -11,27 +11,51 @@ VAR
 	SwitchButtonLight : BOOL;
 	
 	StopButton : BOOL;
+	StartButton : BOOL;
 
 	Options : DropdownBox;
+	
+	bProcess_Status:BOOL;//the timer light
+	tProcess_Duration:TIME;
+	fbProcess_Timer:TON;
+	bTimer_Done:BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[HoldSwitchLight:=HoldButton;
+      <ST><![CDATA[fbProcess_Timer(IN:= bProcess_Status,PT:=tProcess_Duration ,Q=> bTimer_Done,ET=> );
+
+HoldSwitchLight:=HoldButton;
 SwitchButtonLight:=SwitchButton;
 
-IF StopButton THEN
-	HoldButton:=FALSE;
+IF StartButton THEN
+	bProcess_Status:=TRUE;
+END_IF
+
+IF StopButton OR bTimer_Done THEN
+	bProcess_Status:=FALSE;
+	//HoldButton:=FALSE;
 	SwitchButton:=FALSE;
-END_IF]]></ST>
+END_IF
+
+
+]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="2" Count="0" />
-      <LineId Id="13" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="72" Count="1" />
       <LineId Id="28" Count="0" />
-      <LineId Id="27" Count="0" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="82" Count="1" />
+      <LineId Id="81" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="84" Count="0" />
       <LineId Id="29" Count="0" />
       <LineId Id="31" Count="0" />
       <LineId Id="30" Count="0" />
+      <LineId Id="77" Count="0" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="49" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

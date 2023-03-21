@@ -2387,6 +2387,16 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.MAIN.StartButton": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::StartButton",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
         "PLC1.MAIN.StopButton": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -2414,6 +2424,26 @@
             "MAPPING": "PLC1::MAIN::SwitchButtonLight",
             "SCHEMA": {
                 "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.bProcess_Status": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::bProcess_Status",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.MAIN.tProcess_Duration": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::MAIN::tProcess_Duration",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/TIME"
             },
             "USEMAPPING": true
         },
@@ -3277,9 +3307,12 @@
                 "PLC1.MAIN.HoldButton": 3,
                 "PLC1.MAIN.HoldSwitchLight": 3,
                 "PLC1.MAIN.Options": 3,
+                "PLC1.MAIN.StartButton": 3,
                 "PLC1.MAIN.StopButton": 3,
                 "PLC1.MAIN.SwitchButton": 3,
                 "PLC1.MAIN.SwitchButtonLight": 3,
+                "PLC1.MAIN.bProcess_Status": 3,
+                "PLC1.MAIN.tProcess_Duration": 3,
                 "SetLocale": 3,
                 "SubscribeEvents": 3,
                 "TcHmiSqliteLogger.Diagnostics": 1,
