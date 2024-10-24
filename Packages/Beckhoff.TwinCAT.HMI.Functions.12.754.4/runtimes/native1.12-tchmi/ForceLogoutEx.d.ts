@@ -1,9 +1,0 @@
-declare module TcHmi.Functions.Beckhoff {
-    /**
-     * Logout a different user or all from a TcHmiServer
-     * @param ctx An object holding functions for success and error.
-     * @param username
-     */
-    function ForceLogoutEx(ctx: Required<TcHmi.Context>, username: string | null | undefined): boolean;
-}
-//# sourceMappingURL=ForceLogoutEx.d.ts.map
